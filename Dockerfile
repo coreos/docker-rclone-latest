@@ -5,7 +5,7 @@ MAINTAINER colhom@gmail.com
 RUN apt update
 RUN apt -y install wget unzip
 
-RUN wget http://downloads.rclone.org/rclone-current-linux-amd64.zip
+RUN wget https://downloads.rclone.org/rclone-current-linux-amd64.zip
 
 RUN unzip rclone-current-linux-amd64.zip
 
