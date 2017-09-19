@@ -8,7 +8,7 @@ ENV RCLONE_LINUX_SHASUM=e55aac6349f883c15834df63a7c77bee2af2834d43e15b52b3470aad
 RUN apt update && \
     apt -y install wget unzip && \
     mkdir -p /tmp/rclone && cd /tmp/rclone && \
-    wget https://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-amd64.zip && \
+    wget --quiet https://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-amd64.zip && \
     echo "${RCLONE_LINUX_SHASUM}  rclone-${RCLONE_VERSION}-linux-amd64.zip" | sha512sum -c && \
     unzip rclone-${RCLONE_VERSION}-linux-amd64.zip && \
     cp ./rclone-v*-linux-amd64/rclone /usr/sbin && \
