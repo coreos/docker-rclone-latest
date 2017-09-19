@@ -2,8 +2,8 @@ FROM debian:9
 
 MAINTAINER colhom@gmail.com
 
-RUN apt-get update
-RUN apt-get -y install wget unzip
+RUN apt update
+RUN apt -y install wget unzip
 
 RUN wget http://downloads.rclone.org/rclone-current-linux-amd64.zip
 
