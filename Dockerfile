@@ -2,13 +2,13 @@ FROM debian:9
 
 MAINTAINER colhom@gmail.com
 
-ENV RCLONE_VERSION=v1.37
-ENV RCLONE_LINUX_SHASUM=e55aac6349f883c15834df63a7c77bee2af2834d43e15b52b3470aadfa1b631ef1ab684307b2375a593d4c34c04318a27a579c35b154cc1798c9d6247a321f2e
+ENV RCLONE_VERSION=v1.39
+ENV RCLONE_LINUX_SHASUM=962cf9bd99ec96e82f3ef99ebfdcb9189bb3469ff817e4c2648b023b1d39f618198a50b55452d73c57c9c0efcf8d4782eeb87d4c30091dd81188724a765179ac
 
 RUN apt update && \
     apt -y install wget unzip && \
     mkdir -p /tmp/rclone && cd /tmp/rclone && \
-    wget --quiet https://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-amd64.zip && \
+    wget --quiet https://github.com/ncw/rclone/releases/download/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.zip && \
     echo "${RCLONE_LINUX_SHASUM}  rclone-${RCLONE_VERSION}-linux-amd64.zip" | sha512sum -c && \
     unzip rclone-${RCLONE_VERSION}-linux-amd64.zip && \
     cp ./rclone-v*-linux-amd64/rclone /usr/sbin && \
